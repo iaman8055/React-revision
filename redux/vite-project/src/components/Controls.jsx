@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { counterActions } from '../Store';
 
 const Controls = () => {
     const [number,setNumber]=useState(0);
-    const [number1,setNumber1]=useState(0);
 
     const dispatch=useDispatch();
     const handleIncrement=()=>{
-        dispatch({type:'INCREMENT'})
+        // dispatch({type:'INCREMENT'})
+        dispatch(counterActions.increment())
     }
     const handleDecrement=()=>{
-        dispatch({type:'DECREMENT'})
+        
+        // dispatch({type:'DECREMENT'})
+        dispatch(counterActions.decrement())
     }
     const handleSub=()=>{
-        dispatch({type:'SUBSTRACTION',payload:{number}})
+        // dispatch({type:'SUBSTRACTION',payload:{number}})
+        dispatch(counterActions.substract(number))
     }
     const handleAdd=()=>{
-        dispatch({type:'ADDITION',payload:{number}})
+        counterActions.add(number)
+        // dispatch({type:'ADDITION',payload:{number}})
     }
     
   return (
