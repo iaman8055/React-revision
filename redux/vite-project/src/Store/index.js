@@ -43,7 +43,7 @@ const counterSlice=createSlice({
     }
 })
 const counterStore=configureStore({reducer:{
-   counrter: counterSlice.reducer
+   counter: counterSlice.reducer
 
 }})
 export const counterActions=counterSlice.actions;

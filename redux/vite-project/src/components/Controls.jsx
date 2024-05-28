@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { counterActions } from '../Store';
 
 const Controls = () => {
-    const [number,setNumber]=useState(0);
+    const [number,setNumber]=useState("   ");
 
     const dispatch=useDispatch();
     const handleIncrement=()=>{
@@ -20,7 +20,8 @@ const Controls = () => {
         dispatch(counterActions.substract(number))
     }
     const handleAdd=()=>{
-        counterActions.add(number)
+        dispatch(counterActions.add(number)
+    )
         // dispatch({type:'ADDITION',payload:{number}})
     }
     
